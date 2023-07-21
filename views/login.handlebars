@@ -1,0 +1,50 @@
+<style>
+    .login {
+        margin: 5vh;
+        border: 2px solid #000;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login h3 {
+        background: #23100f;
+        color: white;
+        margin-top: 0;
+        padding: 5px;
+    }
+
+    .login label, .login input, .login button {
+        margin: 5px;
+    }
+</style>
+
+
+
+<div class="login">
+    <h3>LogIn</h3>
+    <label for="">Username</label>
+    <input type="text" id="username" placeholder="Arturo">
+    <label for="">Password</label>
+    <input type="password" id="password" placeholder="*******">
+    <button id="login">Login!</button>
+</div>
+
+<script>
+    login.onclick = async () => {
+        let username = document.getElementById('username').value;
+        let password = document.getElementById('password').value;
+
+        //console.log(username,password);
+        
+        let result = await fetch('/api/users/login', {
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({username,password})
+        });
+
+        if(result.ok) return document.location.replace('/dashboard');
+        alert('Failed to login');
+    };
+</script>

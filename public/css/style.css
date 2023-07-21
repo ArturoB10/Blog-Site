@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    background: #d9ead3;
+}
+
+nav {
+    background: #23100f;
+    color: white;
+    padding: 10px;
+}
+
+nav div {
+    width: fit-content;
+    margin: 0 auto 5px 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+}
+
+nav h1 {
+    color: #23100f;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 1px silver;
+    display: block;
+    background: #d9ead3;
+    width: fit-content;
+    margin: 10px;
+}a

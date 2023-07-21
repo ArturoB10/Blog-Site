@@ -1,0 +1,25 @@
+<style>
+  .signup { margin: 5vh; border: 2px solid #000; display: flex; flex-direction:
+  column; } .signup h3 { background: #23100f; color: white; margin-top: 0;
+  padding: 5px; } .signup label, .signup input, .signup button { margin: 5px; }
+</style>
+
+<div class="signup">
+  <h3>Sign Up</h3>
+  <label for="">Username</label>
+  <input type="text" id="username" placeholder="Arturo" />
+  <label for="">Password</label>
+  <input type="password" id="password" placeholder="*******" />
+  <button id="signup">Sign Up!</button>
+</div>
+
+<script>
+  signup.onclick = () => { let username =
+  document.getElementById('username').value; let password =
+  document.getElementById('password').value; //console.log(username,password);
+  fetch('/api/users', { method:'POST', headers: { 'Content-Type':
+  'application/json' }, body: JSON.stringify({username,password}) })
+  
+  if(result.ok) return document.location.replace('/dashboard'); 
+  alert('Failed to sign up') };
+</script>
